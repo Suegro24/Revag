@@ -18,6 +18,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 ul {
   list-style: none;
 }
@@ -52,27 +56,23 @@ ul {
           justify-content: space-between;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .header__menu .list__item {
-  margin-right: 72px;
+  margin: 0 15px;
   color: #464646;
   text-transform: uppercase;
   font-weight: bold;
   text-shadow: 0px 3px 6px #00000029;
   cursor: pointer;
-}
-
-.header__menu .list__item:last-child {
-  margin-right: 92px;
+  text-align: center;
 }
 
 .section__main-page {
   background-image: url("../images/home-background.png");
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100vw;
   height: 100vh;
   position: relative;
 }
@@ -116,14 +116,14 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 410px;
+  margin: 0 300px 0 200px;
 }
 
 .section__conversion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 200px 0 0 410px;
+  margin: 200px 0 0 370px;
   position: relative;
 }
 
@@ -135,12 +135,17 @@ ul {
 
 .section__contact {
   background-color: #F5F5F5;
-  padding: 0 0 0 410px;
+  padding: 0 0 0 370px;
   position: relative;
+  top: -5px;
 }
 
 .section .chip-tuning__content {
-  margin-left: 100px;
+  margin-left: 120px;
+}
+
+.section .chip-tuning__content h2 {
+  line-height: 3.5rem;
 }
 
 .section .conversion__title {
@@ -159,21 +164,37 @@ ul {
   width: 100%;
 }
 
-.section .conversion__more-info p {
+.section .conversion__more-info button {
   background-color: white;
-  padding: 15px 25px;
+  padding: 15px 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-weight: bold;
   margin-left: 50px;
   cursor: pointer;
+  border: none;
+  color: black;
 }
 
 .section .conversion__image {
   z-index: 2;
   position: relative;
   bottom: -6px;
+}
+
+.section .conversion__show-more-content {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  bottom: -700px;
+  left: -80px;
+  width: 400px;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 4px black;
+          box-shadow: 0 0 4px black;
 }
 
 .section__more-cars {
@@ -298,11 +319,11 @@ ul {
   padding: 50px 0 30px 415px;
 }
 
-.footer__social-media img {
+.footer__social-media a {
   margin-right: 70px;
 }
 
-.footer__social-media img:last-child {
+.footer__social-media a:last-child {
   margin-right: 0;
 }
 
