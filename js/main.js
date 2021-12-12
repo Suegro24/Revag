@@ -41,7 +41,7 @@ const initMessageButton = () => {
     image.width="20";
 
     const whatsapp = document.createElement('a');
-    whatsapp.href="https://api.whatsapp.com/send/?phone=%2B48792791179&text&app_absent=0";
+    whatsapp.href="https://api.whatsapp.com/send/?phone=%2B48668300462&text&app_absent=0";
     whatsapp.target="_blank";
     whatsapp.className = 'contact-box__item';
     const whatsappImage = document.createElement('img');
