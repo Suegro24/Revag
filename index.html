@@ -7,7 +7,11 @@
     <title>Revag</title>
     <link href="./css/style.css" rel="stylesheet">
     <link rel="icon" href="./images/REVAG_Logo.svg">
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=${{secrets.GOOGLE_MAPS_API_KEY}}&callback=initMap&libraries=&v=weekly" async></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlA_xcqroorEubIhXv4eZIOH3duitJYCQ&callback=initMap&libraries=&v=weekly" async></script>
     <script src="js/main.js" defer async></script>
+    
 </head>
 <body>
     <header class="header">
@@ -25,7 +29,7 @@
             </ul>
         </div>
     </header>
-    <main>
+    <main class="main">
         <section class="section section__main-page">
             <div class="main-page main-page__description">
                 <h2>Odblokuj moc w swoim aucie!</h2>
@@ -90,6 +94,9 @@
                     <div class="dash"></div>
                 </div>
             </div>
+        </section>
+        <section class="section section__map">
+            <div id="map"></div>
         </section>
         <section class="section section__contact">
             <div class="contact__call-us">

@@ -17,4 +17,79 @@ const showMore = (type) => {
     }
 }
 
+const initMap = () => {
+    const company = { lat: 52.570559672156506, lng: 20.70757960490652 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: company,
+    });
+    const marker = new google.maps.Marker({
+      position: company,
+      map: map,
+    });
+}
+
+const toggleMessageBox = () => {
+    const contactBox = document.querySelector('#contactBox');
+    const button = document.querySelector('#buttonBox');
+    if (contactBox.style.opacity == '1') {
+        const image = document.createElement('img');
+        image.src="./images/form.png";
+        image.width="20";
+        contactBox.style.opacity = '0';
+
+        button.innerHTML = '';
+        button.appendChild(image);
+
+    } else {
+        contactBox.style.opacity = '1';
+        button.innerHTML = 'X';
+    } 
+}
+
+const initMessageButton = () => {
+    const image = document.createElement('img');
+    image.src="./images/form.png";
+    image.width="20";
+
+    const whatsapp = document.createElement('a');
+    whatsapp.href="https://api.whatsapp.com/send/?phone=%2B48792791179&text&app_absent=0";
+    whatsapp.target="_blank";
+    whatsapp.className = 'contact-box__item';
+    const whatsappImage = document.createElement('img');
+    whatsappImage.src="./images/whatsapp.svg";
+    whatsappImage.width="32";
+    const whatsappText = document.createElement('p');
+    whatsappText.innerText = 'Whatsapp';
+    whatsapp.appendChild(whatsappImage);
+    whatsapp.appendChild(whatsappText);
+
+    const box = document.createElement('div');
+    box.className = 'contact-box';
+    box.setAttribute('id', 'contactBox');
+    box.appendChild(whatsapp);
+
+    const button = document.createElement('div');
+    button.className="button-box";
+    button.setAttribute('id', 'buttonBox');
+
+    button.appendChild(image);
+    button.addEventListener('click', toggleMessageBox, false)
+
+    const boxContainer = document.createElement('div');
+    boxContainer.className = 'container-box';
+    boxContainer.appendChild(box);
+    boxContainer.appendChild(button);
+
+    const main = document.querySelector('.main');
+    main.appendChild(boxContainer);
+}
+
+const run = () => {
+    initMessageButton();
+    initMap();
+};
+
+run();
+
 conversionButton.addEventListener('click', showMore.bind(null, 'conversion'));
