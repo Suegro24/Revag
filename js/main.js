@@ -77,8 +77,6 @@ const run = () => {
     initMessageButton();
 };
 
-if (document.readyState === 'complete') {
-    run();
-}
+run();
 
 conversionButton.addEventListener('click', showMore.bind(null, 'conversion'));
