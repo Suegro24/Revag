@@ -17,18 +17,6 @@ const showMore = (type) => {
     }
 }
 
-const initMap = () => {
-    const company = { lat: 52.570559672156506, lng: 20.70757960490652 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 14,
-      center: company,
-    });
-    const marker = new google.maps.Marker({
-      position: company,
-      map: map,
-    });
-}
-
 const toggleMessageBox = () => {
     const contactBox = document.querySelector('#contactBox');
     const button = document.querySelector('#buttonBox');
@@ -87,9 +75,10 @@ const initMessageButton = () => {
 
 const run = () => {
     initMessageButton();
-    initMap();
 };
 
-run();
+if (document.readyState === 'complete') {
+    run();
+}
 
 conversionButton.addEventListener('click', showMore.bind(null, 'conversion'));
