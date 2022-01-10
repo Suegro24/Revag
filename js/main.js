@@ -1,4 +1,5 @@
 const conversionButton = document.querySelector('#buttonConversion');
+const hamburger = document.querySelector('#hamburger')
 
 const showMore = (type) => {
     switch(type) {
@@ -73,6 +74,15 @@ const initMessageButton = () => {
     main.appendChild(boxContainer);
 }
 
+const toggleMenu = () => {
+    const list = document.querySelector('.header__menu .list');
+    if (list.style.display == 'block') {
+        list.style.display = 'none';
+    } else {
+        list.style.display = 'block';
+    }
+}
+
 const run = () => {
     initMessageButton();
 };
@@ -80,3 +90,4 @@ const run = () => {
 run();
 
 conversionButton.addEventListener('click', showMore.bind(null, 'conversion'));
+hamburger.addEventListener('click', toggleMenu, false);

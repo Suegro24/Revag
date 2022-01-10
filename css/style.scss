@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: Geometr415;
+    src: url('fonts/Geometric-415-Black-BT_20220.ttf');
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -32,11 +37,41 @@ ul {
     z-index: 1000;
     width: 100%;
     top: 58px;
-    font-family: 'Geometr415 Blk BT', sans-serif;
+    font-family: Geometr415, sans-serif;
 
     &__logo {
         margin-left: 152px;
         width: fit-content;
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 25px;
+        height: 4px;
+        background-color: black;
+        display: none;
+
+        &::before {
+            content: '';;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: black;
+        }
+
+        &::after {
+            content: '';;
+            position: absolute;
+            top: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: black;
+        }
     }
 
     &__menu .list {
@@ -166,7 +201,7 @@ ul {
         &__show-more-content {
             display: none;
             position: absolute;
-            z-index: 2;
+            z-index: 1000;
             bottom: -700px;
             left: -80px;
             width: 400px;
@@ -471,3 +506,240 @@ ul {
         }
     }
 }
+
+@media (max-width: 1800px) {
+    .section .offer__content {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1700px) {
+    .conversion__image img {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .section__conversion {
+        min-height: 815px;
+    }
+
+    .section .contact__form {
+        right: 100px;
+    }
+
+    .section .conversion__more-info {
+        padding: 100px 0 200px 0;
+    }
+}
+
+@media (max-width: 1400px) {
+    .header .hamburger {
+        display: block;
+    }
+
+    .header__menu .list {
+        display: none;
+        margin-top: 20px;
+        padding: 20px 0;
+
+        &__item {
+            margin-top: 10px;
+        }
+    }
+
+    .contact__car {
+        display: none;
+    }
+
+    .section .contact__form {
+        position: static;
+    }
+
+    .section__contact {
+        display: flex;
+        padding: 0;
+        justify-content: space-evenly;
+        top: unset;
+    }
+}
+
+@media (max-width: 1350px) {
+    .chip-tuning__tractor {
+        position: absolute;
+        opacity: .25;
+    }
+
+    .chip-tuning__content {
+        .description {
+            opacity: 1;
+            font-size: 1rem;
+        }
+    }
+
+    .offer__image {
+        display: none;
+    }
+
+    .offer__dashes {
+        display: none;
+    }
+
+    .section__offer {
+        .offer__content {
+            margin: 0 300px;
+            text-align: center;
+
+            .title {
+                margin-top: 100px;
+            }
+        }
+    }
+    
+    .section .offer__content .description {
+        width: unset;
+        margin-bottom: 20px;
+    }
+
+    .offer__container {
+        
+        width: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .conversion__image img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .conversion__image {
+        display: none;
+    }
+
+    .section__conversion {
+        min-height: unset;
+        margin: 0 auto;
+    }
+
+    .section .conversion__more-info {
+        margin-top: 50px;
+        position: static;
+    }
+
+    .label {
+        text-align: center;
+        display: block;
+        width: unset;
+
+        &::before {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+    }
+
+    .section .conversion__show-more-content {
+        left: 15px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .section__contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+        padding: 40px 0;
+    }
+
+    .section .contact__call-us {
+        padding: 0;
+        text-align: center;
+    }
+
+    .section .more-cars__carousel {
+        display: none;
+    }
+
+    .section__more-cars {
+        display: none;
+    }
+
+    .section .conversion__more-info {
+        padding: 50px 0 100px 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .chip-tuning__tractor {
+        display: none;
+    }
+
+    .section__chip-tuning {
+        margin: 0 auto;
+    }
+
+    .chip-tuning__content {
+        margin: 0 !important;
+        padding: 0 20px;
+    }
+
+    .conversion__content {
+        padding: 0 20px;
+    }
+
+    .conversion__description {
+        margin: 0 auto !important;
+        text-align: center;
+    }
+
+    .offer__content {
+        margin: 0 auto 40px auto !important;
+        padding: 0 20px;
+
+        .title {
+            margin: 40px !important;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .section .main-page .description__text {
+        width: unset;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer {
+        padding: 0;
+    }
+
+    .footer__content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .section .contact__form {
+        width: 100%;
+    }
+
+    .header__logo {
+        margin-left: 10px;
+
+        img {
+            width: 150px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .section .main-page__description {
+        right: 5px;
+    }
+
+    .section .contact__form {
+        padding: 20px;
+    }
+}
+
